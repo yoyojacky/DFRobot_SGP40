@@ -26,7 +26,7 @@ bool DFRobot_SGP40::begin(uint32_t duration)
   VocAlgorithm_init(&_vocaAgorithmParams);
   unsigned long timestamp = millis();
   while(millis()-timestamp<duration){
-    getVoclndex();
+    getVocIndex();
   }
   return sgp40MeasureTest();
 }
@@ -93,7 +93,7 @@ uint16_t DFRobot_SGP40::readRawData()
   return value;
 }
 
-uint16_t DFRobot_SGP40::getVoclndex(void)
+uint16_t DFRobot_SGP40::getVocIndex(void)
 {
   uint8_t data[3]={0,0,0};
   int32_t value;
